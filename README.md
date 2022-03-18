@@ -1,4 +1,4 @@
-# monolith-dashboard-express-ejs-layout
+# Monolith Dashboard using Express,js and Express EJS Layout
 Create simple monolith dashboard express.js and express-ejs-layout
 
 #Install
