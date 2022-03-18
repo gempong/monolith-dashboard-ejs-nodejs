@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs')  %> 
-<body class="dashboard-bg">
-    <%- include('../partials/navbar.ejs')  %> 
-    <%- include('../partials/sidebar.ejs')  %> 
+  <%- include('../partials/head.ejs') %>
+  <body class="dashboard-bg">
+    <%- include('../partials/navbar.ejs') %> <%-
+    include('../partials/sidebar.ejs') %>
     <div class="main-content">
-        <div class="content-wrapper">
-            <%- body %>
-        </div>
+      <div class="content-wrapper"><%- body %></div>
     </div>
-</body>
-</html> 
+    <script>
+      if (localStorage.getItem("sidebar") == "true") {
+        $(".sidebar-menu").toggleClass("collapse");
+        $(".main-content").toggleClass("full");
+      }
+      $("#sidebar-toggle").click(function () {
+        if (localStorage.getItem("sidebar") == "true") {
+          localStorage.setItem("sidebar", "false");
+        } else {
+          localStorage.setItem("sidebar", "true");
+        }
+        $(".sidebar-menu").toggleClass("collapse");
+        $(".main-content").toggleClass("full");
+      });
+    </script>
+  </body>
+</html>

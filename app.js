@@ -7,6 +7,9 @@ const expressLayouts = require('express-ejs-layouts')
 const router = require('./routes')
 const app = express()
 
+const LocalStorage = require('node-localstorage').LocalStorage
+const localStorage = new LocalStorage('./scratch')
+
 // view engine setup
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))

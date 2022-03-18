@@ -6,6 +6,6 @@ const car = require('./car')
 router.use('/', auth)
 
 router.use('/', dashboard)
-router.use('/', car)
+router.use('/car', car)
 
 module.exports = router

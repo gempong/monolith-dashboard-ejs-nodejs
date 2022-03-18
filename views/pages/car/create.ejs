@@ -1,0 +1,88 @@
+<div class="page-content">
+  <form action="">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/car">Car</a></li>
+        <li class="breadcrumb-item"><a href="/car">List Car</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><%- title %> </li>
+      </ol>
+    </nav>
+    <h1 class="page-title"><%- title %></h1>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group row align-items-center">
+              <label for="name" class="col-sm-4 col-form-label"
+                >Nama <span>*</span></label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Masukan nama"
+                />
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <label for="harga" class="col-sm-4 col-form-label"
+                >Harga <span>*</span></label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="harga"
+                  placeholder="Masukan harga"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="foto" class="col-sm-4 col-form-label"
+                >Foto <span>*</span></label
+              >
+              <div class="col-sm-8">
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="inputGroupFile04"
+                  />
+                  <label
+                    class="form-control custom-file-label"
+                    for="inputGroupFile04"
+                    >Upload foto</label
+                  >
+                  <small>File size max. 2MB</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-4 col-form-label">Finish Rent</label>
+              <div class="col-sm-8">
+                <label>-</label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-4 col-form-label">Created at</label>
+              <div class="col-sm-8">
+                <label>-</label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-4 col-form-label">Updated at</label>
+              <div class="col-sm-8">
+                <label>-</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-action">
+      <a href="" class="btn btn-outline-primary mr-3">Cancel</a>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>

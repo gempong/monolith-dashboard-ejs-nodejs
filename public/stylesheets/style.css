@@ -1,3 +1,8 @@
+*{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body{
     font-family: 'Helvetica';
 }
@@ -62,7 +67,7 @@ body{
     border-radius: 4px !important;
     font-weight: 700;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 17px;
     transition: ease .3s;
 }
 
@@ -120,6 +125,7 @@ body{
     transition: ease .5s;
 }
 
+.sidebar .sidebar-nav ul li.active > a,
 .sidebar .sidebar-nav ul li > a:hover{
     font-weight: 700;
     background: rgba(255, 255, 255, 0.3);
@@ -133,12 +139,15 @@ body{
 }
 
 .sidebar .sidebar-menu{
-    min-width: 220px;
+    display: block;
+    width: 220px;
     background: #fff;
     padding: 35px 0;
     padding-top: 105px;
     list-style: none;
     overflow: hidden;
+    margin: 0;
+    transition: all ease .5s;
 }
 
 .sidebar .sidebar-menu li{
@@ -148,6 +157,7 @@ body{
 .sidebar .sidebar-menu li.active{
     display: block;
     height: 100vh;
+    white-space: nowrap;
 }
 
 .sidebar .sidebar-menu li p{
@@ -171,8 +181,17 @@ body{
     text-decoration: none;
 }
 
+#sidebar-toggle{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sidebar-menu.collapse{
+    width: 0;
+}
+
 .navbar{
-    padding: 18px 24px;
+    padding: 16px 24px;
     background: #fff;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
     position: relative;
@@ -181,6 +200,7 @@ body{
     left: 70px;
     right: 0;
     top: 0;
+    align-items: center;
 }
 
 .navbar .brand img{
@@ -223,6 +243,11 @@ body{
 .main-content{
     padding-top: 70px;
     padding-left: 290px;
+    transition: all ease .5s;
+}
+
+.main-content.full{
+    padding-left: 70px;
 }
 
 .main-content .content-wrapper{
@@ -231,4 +256,153 @@ body{
 
 .dashboard-bg{
     background: #F4F5F7;
+}
+
+.btn-outline-primary{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0D28A6;
+    padding: 8px 12px;
+    border-color: #0D28A6;
+    background-color: #fff;
+}
+
+.btn-outline-primary:hover{
+    color: #ffffff;
+    background-color: #0D28A6;
+}
+
+.btn-primary{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-color: #0D28A6;
+    background-color: #0D28A6;
+}
+
+.btn-primary:hover{
+    background-color: #0b2185;
+}
+
+.form-control{
+    border-color: rgba(208, 208, 208, 1);
+    border-radius: 2px;
+    padding: 9px 12px;
+    font-weight: 300;
+    font-size: 12px;
+    height: 36px;
+}
+
+.form-search .form-control{
+    max-width: 175px;
+}
+
+.form-with-icon .form-control{
+    padding-left: 38px;
+    position: relative;
+}
+
+.form-with-icon {
+    position: relative;
+}
+
+.form-with-icon svg{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.account-avatar img{
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+}
+
+.breadcrumb{
+    padding: 0;
+    background: none;
+    margin-bottom: 27px;
+}
+
+.breadcrumb .breadcrumb-item{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0;
+}
+
+.breadcrumb .breadcrumb-item.active{
+    font-weight: 300;
+}
+
+.breadcrumb .breadcrumb-item a{
+    color: #000000 !important;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: url(/images/chevron-right.svg);
+    top: 1px;
+    position: relative;
+    height: 16px;
+    width: 16px;
+    display: block;
+    padding: 0;
+    margin: 0 4px;
+}
+
+.page-title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.card{
+    border: none;
+}
+
+.card-body{
+    padding: 16px;
+}
+
+.form-group label{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3C3C3C;
+}
+
+.form-group label > span{
+    color: red
+}
+
+.custom-file-label::after{
+    content: url(/images/fi_upload.svg) !important;
+    background: none;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    padding: 0;
+    height: 18px;
+    width: 18px;
+}
+
+.form-group small {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 14px;
+    color: #8A8A8A;
+    margin: 4px 0px;
+}
+
+.form-action{
+    position: absolute;
+    bottom: 40px;
 }
