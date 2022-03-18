@@ -9,4 +9,4 @@ cp .env.example .env
 npm start
 ```
 
-Then visit http://localhost:3000/
+Then visit http://localhost:8000/
