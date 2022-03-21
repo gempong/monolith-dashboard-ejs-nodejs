@@ -4,8 +4,8 @@
             <img src="/images/sidebar_logo.png" class="logo" alt="">
         </a>
         <ul>
-            <li <% if(title === "Dashboard"){ %> class="active" <% } %>><a href="/"><img src="/images/fi_home.svg" alt=""> Dashboard</a></li>
-            <li <% if(title === "Cars" || title ===  "Add New Car" || title === "Update Car"){ %> class="active" <% } %>><a href="/car"><img src="/images/fi_truck.svg" alt=""> Cars</a></li>
+            <li <% if(title === "Dashboard"){ %> class="active" <% } %>><a href="/"><i data-feather="home"></i> Dashboard</a></li>
+            <li <% if(title === "List Car" || title ===  "Add New Car" || title === "Update Car"){ %> class="active" <% } %>><a href="/car"><i data-feather="truck"></i> Cars</a></li>
         </ul>
     </div>
     <ul class="sidebar-menu">
@@ -13,7 +13,7 @@
             <p>DASHBOARD</p>
             <a href="">Dasboard</a>
         </li>
-        <li <% if(title === "Cars" || title ===  "Add New Car" || title ===  "Update Car"){ %> class="active" <% } %>>
+        <li <% if(title === "List Car" || title ===  "Add New Car" || title ===  "Update Car"){ %> class="active" <% } %>>
             <p>CARS</p>
             <a href="">List Car</a>
         </li>

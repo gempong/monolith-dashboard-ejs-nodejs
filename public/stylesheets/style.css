@@ -131,8 +131,9 @@ body{
     background: rgba(255, 255, 255, 0.3);
 }
 
-.sidebar .sidebar-nav ul li img{
+.sidebar .sidebar-nav ul li svg{
     display: block;
+    width: 24px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5px;
@@ -273,6 +274,16 @@ body{
     background-color: #0D28A6;
 }
 
+.btn-outline-primary{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0D28A6;
+    padding: 8px 12px;
+    border-color: #0D28A6;
+    background-color: #fff;
+}
+
 .btn-primary{
     font-weight: 700;
     font-size: 14px;
@@ -310,11 +321,13 @@ body{
 }
 
 .form-with-icon svg{
+    width: 18px;
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    stroke: #D0D0D0;
 }
 
 .account-avatar img{
@@ -405,4 +418,226 @@ body{
 .form-action{
     position: absolute;
     bottom: 40px;
+}
+
+.tab-category .btn{
+    color: #AEB7E1;
+    border-color: #AEB7E1;
+    margin-right: 16px;
+}
+
+.tab-category .btn:hover,
+.tab-category .btn.active{
+    color: #0D28A6 !important;
+    border-color: #0D28A6 !important;
+    background-color: #CFD4ED !important;
+}
+
+.btn{
+    line-height: 17px !important;
+}
+
+.btn svg{
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+}
+
+.car-card{
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.car-card .btn{
+    padding: 11px 0;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.car-card .type{
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.car-card .price{
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.car-card .time{
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.car-card .updatedAt,
+.car-card .time{
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+.car-card .updatedAt svg,
+.car-card .time svg{
+    width: 20px;
+    height: 20px;
+    stroke: #8A8A8A;
+    margin-right: 10px;
+}
+
+table.dataTable thead th{
+    background-color: #CFD4ED !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    padding: 12px 16px !important;
+    border-color: #F4F5F7 !important;
+}
+
+table.dataTable tbody td{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    padding: 12px 16px !important;
+    border-color: #F4F5F7 !important;
+}
+
+table.dataTable.no-footer{
+    border-color: #F4F5F7 !important;
+}
+
+table.dataTable thead .sorting{
+    background-image: url(/images/fi_sort.svg) !important;
+    background-position-x: calc(100% - 16px) !important;
+}
+
+table.dataTable thead .sorting.sorting_asc {
+    background-image: url(/images/fi_sort_asc.svg) !important;
+    background-position-x: calc(100% - 16px) !important;
+}
+
+table.dataTable thead .sorting.sorting_desc {
+    background-image: url(/images/fi_sort_desc.svg) !important;
+    background-position-x: calc(100% - 16px) !important;
+}
+
+body table.dataTable thead .sorting_disabled{
+    background-image: none !important;
+}
+
+.table-title{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    padding: 2px 8px;
+    border-left: 4px solid #0D28A6;
+}
+
+body .dataTables_wrapper .dataTables_paginate .ellipsis,
+body .dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 9px 0 !important;
+    width: 38px;
+    height: 38px;
+    background: #FFFFFF;
+    border: 1px solid #D0D0D0 !important;
+    border-radius: 2px !important;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #8A8A8A !important;
+    margin-left: 2px;
+    text-align: center;
+}
+
+body .dataTables_wrapper .dataTables_paginate .paginate_button svg{
+    width: 16px;
+    height: 16px;
+}
+
+body .dataTables_wrapper .dataTables_paginate .ellipsis{
+    display: inline-block;
+}
+
+body .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+body .dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    background: #CFD4ED !important;
+    border: 1px solid #0D28A6 !important;
+    color: #0D28A6 !important;
+}
+
+body .dataTables_wrapper .dataTables_paginate .paginate_button:hover svg{
+    stroke: #0D28A6;
+}
+
+.table-wrapper{
+    margin-bottom: 40px !important;
+}
+
+.dataTables_paginate{
+    margin-top: 40px;
+    padding: 0 !important;
+}
+
+.dataTables_length label{
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+    margin: 16px 0 0 !important;
+}
+
+.dataTables_length select{
+    display: block;
+    border-color: rgba(208, 208, 208, 1) !important;
+    border-radius: 2px !important;
+    padding: 9px 30px 9px 12px !important;
+    font-weight: 300;
+    font-size: 12px;
+    height: 36px;
+    margin-top: 8px !important;
+    background-color: #fff !important;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url(/images/fi_chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) 8px;
+    background-size: 20px;
+}
+
+.pagination-select{
+    margin-left: 24px;
+}
+
+.pagination-select .pagination-wrapper{
+    display: flex;
+}
+
+.pagination-select .pagination-wrapper .btn{
+    margin-top: 8px !important;
+}
+
+.pagination-select .pagination-wrapper select{
+    width: 76px !important;
 }

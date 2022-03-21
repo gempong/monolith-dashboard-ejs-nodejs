@@ -7,6 +7,7 @@
     <div class="main-content">
       <div class="content-wrapper"><%- body %></div>
     </div>
+    <!-- choose one -->
     <script>
       if (localStorage.getItem("sidebar") == "true") {
         $(".sidebar-menu").toggleClass("collapse");
@@ -21,6 +22,44 @@
         $(".sidebar-menu").toggleClass("collapse");
         $(".main-content").toggleClass("full");
       });
+
+      $(document).ready(function () {
+        let option = {
+          dom: '<"top">rt<"bottom"l><"bottom"p"><"clear">',
+          columnDefs: [
+            {
+              targets: [0] /* column index [0,1,2,3]*/,
+              orderable: false /* true or false */,
+            },
+          ],
+          language: {
+            sLengthMenu: "Limit _MENU_",
+            paginate: {
+              next: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-right"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>', // or '→'
+              previous:
+                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-left"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>', // or '←'
+            },
+          },
+        };
+        $("#dataTable-1").dataTable({
+          ...option,
+          initComplete: function () {
+            $("#table-wrapper-1 .dataTables_length").after(
+              '<div class="dataTables_length pagination-select" id="dataTable-1_length"> <label>Jump to page <div class="pagination-wrapper"> <select name="dataTable-2_length" aria-controls="dataTable-2"> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> </select> <button class="btn btn-primary">Go</button> </div></label> </div>'
+            );
+          },
+        });
+        $("#dataTable-2").dataTable({
+          ...option,
+          initComplete: function () {
+            $("#table-wrapper-2 .dataTables_length").after(
+              '<div class="dataTables_length pagination-select" id="dataTable-1_length"> <label>Jump to page <div class="pagination-wrapper"> <select name="dataTable-2_length" aria-controls="dataTable-2"> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> </select> <button class="btn btn-primary">Go</button> </div></label> </div>'
+            );
+          },
+        });
+      });
+      feather.replace();
     </script>
+    <%- toasts %>
   </body>
 </html>

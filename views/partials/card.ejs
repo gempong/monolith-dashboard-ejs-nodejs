@@ -1,0 +1,20 @@
+<div class="card car-card">
+  <div class="card-body">
+    <img class="img-fluid w-100 mb-3" src='<%- item.image  %>' alt="Car" />
+    <span class="type mb-2"><%- item.name %> </span>
+    <span class="price mb-3">Rp <%- item.price %> / hari</span>
+    <span class="time mb-3"
+      ><i data-feather="key"></i> Start rent - Finish rent</span
+    >
+    <span class="updatedAt mb-4"
+      ><i data-feather="clock"></i> Start rent - Finish rent</span
+    >
+    <div class="d-flex card-action justify-content-between">
+      <a class="btn btn-outline-danger mr-3" href="#"
+        ><i data-feather="trash"></i> Delete</a
+      >
+      <a class="btn btn-success" href="/car/update"><i data-feather="edit"></i> Edit</a>
+    </div>
+  </div>
+</div>
+

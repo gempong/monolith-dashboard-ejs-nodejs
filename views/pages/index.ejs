@@ -1,4 +1,69 @@
-<h1>Dashboard</h1>
-<div class="alert alert-primary" role="alert">
-    This is a primary alert—check it out!
+<div class="page-content">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%- title %></li>
+    </ol>
+  </nav>
+  <h1 class="page-title mb-4"><%- title %></h1>
+</div>
+<div class="table-wrapper" id="table-wrapper-1">
+  <h4 class="table-title mb-3">List Order</h4>
+  <table id="dataTable-1" class="table dataTable" style="width: 100%">
+    <thead>
+      <tr>
+        <th width="5%">No</th>
+        <th>User Email</th>
+        <th>Car</th>
+        <th>Start Rent</th>
+        <th>Finish Rent</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for( let index = 1; index < 90; index++ ) { %>
+      <tr>
+        <td><%- index %></td>
+        <td>User Email</td>
+        <td>Car</td>
+        <td>Start Rent</td>
+        <td>Finish Rent</td>
+        <td>Price</td>
+        <td>Status</td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<div class="table-wrapper" id="table-wrapper-2">
+  <h4 class="table-title mb-3">List Car</h4>
+  <table id="dataTable-2" class="table dataTable" style="width: 100%">
+    <thead>
+      <tr>
+        <th width="5%">No</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Start Rent</th>
+        <th>Finish Rent</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for( let index = 1; index < 90; index++ ) { %>
+      <tr>
+        <td><%- index %></td>
+        <td>Name</td>
+        <td>Category</td>
+        <td>Price</td>
+        <td>Start Rent</td>
+        <td>Finish Rent</td>
+        <td>Created at</td>
+        <td>Updated at</td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
 </div>

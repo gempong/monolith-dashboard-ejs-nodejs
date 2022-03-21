@@ -1,9 +1,13 @@
 const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
+const flash = require('connect-flash')
 const cookieParser = require('cookie-parser')
+const session = require('express-session')
+const toastr = require('express-toastr')
 const logger = require('morgan')
 const expressLayouts = require('express-ejs-layouts')
+const fileUpload = require('express-fileupload')
 const router = require('./routes')
 const app = express()
 
@@ -17,10 +21,25 @@ app.set('view engine', 'ejs')
 app.use(expressLayouts)
 app.set('layout', './layouts/default')
 
+// Dependencies
+app.use(cookieParser('secret'))
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true
+}))
+app.use(flash())
+app.use(toastr())
+
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser())
+app.use(fileUpload())
+
+app.use(function (req, res, next) {
+  res.locals.toasts = req.toastr.render()
+  next()
+})
 
 app.use(router)
 
