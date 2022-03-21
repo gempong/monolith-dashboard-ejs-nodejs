@@ -3,10 +3,13 @@
         <div class="auth-content">
             <img src="/images/auth_logo.png" alt="Logo">
             <h1>Welcome, Admin BCR</h1>
-            <div class="alert alert-danger d-flex" role="alert">
+            <% if (locals.error === true) { %> 
+              <div class="alert alert-danger d-flex" role="alert">
                 <i class="fa-solid fa-circle-exclamation mr-2 mt-1"></i> 
                 <span>Masukkan username dan password yang benar. Perhatikan penggunaan huruf kapital.</span>
               </div>
+            <% } %>
+  
             <form action="/login/store" method="POST">
                 <div class="form-group">
                   <label for="email">Email</label>

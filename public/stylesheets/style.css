@@ -185,6 +185,7 @@ body{
 #sidebar-toggle{
     display: inline-block;
     cursor: pointer;
+    margin-left: 123px;
 }
 
 .sidebar-menu.collapse{
@@ -204,15 +205,11 @@ body{
     align-items: center;
 }
 
-.navbar .brand img{
-    margin-right: 123px;
-}
-
 .account-avatar img{
     margin-right: 8px;
 }
 
-.account-avatar .dropdown a{
+.account-avatar .dropdown .dropdown-toggle{
     position: relative;
     font-weight: 400;
     font-size: 14px;
@@ -222,11 +219,11 @@ body{
     text-decoration: none;
 }
 
-.account-avatar .dropdown a::after{
+.account-avatar .dropdown .dropdown-toggle::after{
     display: none;
 }
 
-.account-avatar .dropdown a::before{
+.account-avatar .dropdown .dropdown-toggle::before{
     content: url(/images/fi_chevron-down.svg);
     width: 24px;
     height: 24px;
@@ -640,4 +637,78 @@ body .dataTables_wrapper .dataTables_paginate .paginate_button:hover svg{
 
 .pagination-select .pagination-wrapper select{
     width: 76px !important;
+}
+
+#toast-container{
+    right: 50%;
+    transform: translateX(50%);
+}
+
+#toast-container > .toast{
+    background-image: none !important;
+    max-width: 550px;
+    width: 100vw;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 10%);
+    border-radius: 4px;
+    padding: 12px 16px;
+    opacity: 1;
+}
+
+#toast-container > .toast-success{
+    background: #73CA5C;
+}
+
+#toast-container > .toast-info{
+    background: #151515;
+}
+
+#toast-container > .toast > .toast-message{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.modal-delete .modal-body{
+    padding: 24px 32px;
+}
+
+.modal-delete .modal-body img{
+    display: block;
+    margin: 0 auto 24px;
+}
+
+.modal-delete .modal-body h4{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.modal-delete .modal-body p{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 576px){
+    .modal-delete .modal-dialog {
+        max-width: 387px;
+    }
+}
+
+.modal-action{
+    display: flex;
+    justify-content: center;
+}
+
+.modal-action .btn{
+    width: 100%;
+    max-width: 87px;
 }

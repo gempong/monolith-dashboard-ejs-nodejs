@@ -1,0 +1,32 @@
+<div
+  class="modal modal-delete fade"
+  id="modalDelete<%=item.id%>"
+  tabindex="-1"
+  aria-labelledby="modalDeleteLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="/images/modal_img.png" alt="" />
+        <h4>Menghapus Data Mobil</h4>
+        <p>
+          Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin
+          menghapus?
+        </p>
+        <div class="modal-action">
+          <a class="btn btn-primary mr-3" href="/car/delete/<%- item.id %> "
+            >Ya</a
+          >
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            data-dismiss="modal"
+          >
+            Tidak
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -26,10 +26,14 @@ app.use(cookieParser('secret'))
 app.use(session({
   secret: 'secret',
   saveUninitialized: true,
-  resave: true
+  resave: true,
+  user: null
 }))
 app.use(flash())
-app.use(toastr())
+
+app.use(toastr({
+  positionClass: 'toast-top-right',
+}))
 
 app.use(logger('dev'))
 app.use(express.json())
