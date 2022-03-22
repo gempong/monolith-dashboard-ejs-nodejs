@@ -447,10 +447,17 @@ body{
     margin: 4px 0px;
 }
 
-.form-action{
-    position: absolute;
-    bottom: 40px;
+@media screen and (min-height: 920px) {
+    .form-action{
+        position: absolute;
+        bottom: 40px;
+        margin-top: 0;
+    } 
 }
+
+.form-action{
+    margin-top: 30px;
+} 
 
 .tab-category .btn{
     color: #AEB7E1;
