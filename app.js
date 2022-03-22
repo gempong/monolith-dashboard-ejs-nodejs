@@ -11,8 +11,9 @@ const fileUpload = require('express-fileupload')
 const router = require('./routes')
 const app = express()
 
+require('dotenv').config()
+
 const LocalStorage = require('node-localstorage').LocalStorage
-const localStorage = new LocalStorage('./scratch')
 
 // view engine setup
 app.use(express.static(path.join(__dirname, 'public')))
