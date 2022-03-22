@@ -33,7 +33,7 @@ app.use(session({
 app.use(flash())
 
 app.use(toastr({
-  positionClass: 'toast-top-right',
+  positionClass: 'toast-top-right'
 }))
 
 app.use(logger('dev'))

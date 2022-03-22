@@ -3,12 +3,13 @@ const User = require('../models/users')
 
 const { auth } = require('../controllers')
 
-function checkLogin(req, res, next) {
-    if(User.login === false){
-        next()
-    } else {
-        res.redirect('/')
-    }
+// MIDDLEWARE GET AUTH
+function checkLogin (req, res, next) {
+  if (User.login === false) {
+    next()
+  } else {
+    res.redirect('/')
+  }
 }
 
 router.get('/login', checkLogin, auth.login)

@@ -205,6 +205,10 @@ body{
     align-items: center;
 }
 
+.navbar a{
+    text-decoration: none;
+}
+
 .account-avatar img{
     margin-right: 8px;
 }
@@ -212,11 +216,15 @@ body{
 .account-avatar .dropdown .dropdown-toggle{
     position: relative;
     font-weight: 400;
+    padding-right: 32px;
+    text-decoration: none;
+}
+
+.account-avatar .dropdown .dropdown-item,
+.account-avatar .dropdown .dropdown-toggle{
     font-size: 14px;
     line-height: 20px;
     color: #151515;
-    padding-right: 32px;
-    text-decoration: none;
 }
 
 .account-avatar .dropdown .dropdown-toggle::after{
@@ -266,19 +274,28 @@ body{
     background-color: #fff;
 }
 
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
 .btn-outline-primary:hover{
     color: #ffffff;
-    background-color: #0D28A6;
+    background-color: #0D28A6 !important;
 }
 
-.btn-outline-primary{
+.btn-outline-danger{
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-    color: #0D28A6;
+    color: #FA2C5A;
     padding: 8px 12px;
-    border-color: #0D28A6;
+    border-color: #FA2C5A;
     background-color: #fff;
+}
+
+.btn-outline-danger:focus,
+.btn-outline-danger:active,
+.btn-outline-danger:hover{
+    color: #ffffff;
+    background-color: #FA2C5A !important;
 }
 
 .btn-primary{
@@ -291,8 +308,26 @@ body{
     background-color: #0D28A6;
 }
 
+.btn-primary:focus,
+.btn-primary:active,
 .btn-primary:hover{
-    background-color: #0b2185;
+    background-color: #0b2185 !important;
+}
+
+.btn-success{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-color: #5CB85F;
+    background-color: #5CB85F;
+}
+
+.btn-success:focus,
+.btn-success:active,
+.btn-success:hover{
+    background-color: #54a557 !important;
 }
 
 .form-control{

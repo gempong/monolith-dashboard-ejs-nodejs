@@ -12,9 +12,9 @@ module.exports = {
   login: (req, res) => {
     res.render('pages/auth/login', locals)
   },
-  // FAKE LOGIN FUNCTION
+  // LOGIN FUNCTION
   login_store: (req, res) => {
-    if(req.body.username === User.username && bycypt.compareSync(req.body.password, User.password)){
+    if (req.body.username === User.username && bycypt.compareSync(req.body.password, User.password)) {
       locals.error = false
       User.login = true
       res.redirect('/')
@@ -24,6 +24,7 @@ module.exports = {
       res.render('pages/auth/login', locals)
     }
   },
+  // LOGOUT FUNCTION
   logout: (req, res) => {
     locals.error = false
     User.login = false

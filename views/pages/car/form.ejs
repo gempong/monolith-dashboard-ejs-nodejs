@@ -61,6 +61,7 @@
                     class="custom-file-input"
                     id="inputGroupFile04"
                     name="image"
+                    accept="image/*"
                   />
                   <label
                     class="form-control custom-file-label"
@@ -71,7 +72,7 @@
            
                 </div>
                   <% if (locals.dataUpdate) { %> 
-                  <img src='<%= dataUpdate.image %>' alt="">
+                  <img width="300" src='<%= dataUpdate.image %>' alt="">
                   <% } %>
               </div>
             </div>

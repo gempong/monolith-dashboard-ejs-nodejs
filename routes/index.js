@@ -6,12 +6,13 @@ const User = require('../models/users')
 
 router.use('/', auth)
 
+// MIDDLEWARE AUTH
 router.use(function (req, res, next) {
-    if(User.login === true){
-        next()
-    } else {
-        res.redirect('/login')
-    }
+  if (User.login === true) {
+    next()
+  } else {
+    res.redirect('/login')
+  }
 })
 
 router.use('/', dashboard)
