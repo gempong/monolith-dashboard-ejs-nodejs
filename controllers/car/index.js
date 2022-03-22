@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const Car = require('../../models/car')
+const moment = require('moment')
 
 module.exports = {
   // VIEW LIST OF CAR
@@ -42,8 +43,13 @@ module.exports = {
     images.mv(path.join(__dirname, '../../public/upload/') + id + images.name)
 
     // PUSH DATA
+    const startRent = moment(req.body.start_rent)
+    const finishRent = moment(req.body.finish_rent)
+    const updateAt = moment().toDate()
+    const createdAt = moment().toDate()
+
     const uploaded = '/upload/' + id + images.name
-    Car.push({ id: id, name: req.body.name, price: req.body.price, image: uploaded })
+    Car.push({ id: id, name: req.body.name, price: req.body.price, image: uploaded, start_rent: startRent, finish_rent: finishRent, update_at: updateAt, created_at: createdAt })
     req.toastr.success('Data Berhasil Disimpan')
 
     res.redirect('/car')
@@ -83,8 +89,15 @@ module.exports = {
     }
 
     // UPDATE DATA
+    const startRent = moment(req.body.start_rent)
+    const finishRent = moment(req.body.finish_rent)
+    const updateAt = moment().toDate()
+
     Car[foundIndex].name = req.body.name
     Car[foundIndex].price = req.body.price
+    Car[foundIndex].start_rent = startRent
+    Car[foundIndex].finish_rent = finishRent
+    Car[foundIndex].updated_at = updateAt
 
     req.toastr.success('Data Berhasil Diubah')
     res.redirect('/car')

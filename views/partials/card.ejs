@@ -17,10 +17,10 @@
     %> 
     <span class="price mb-3">Rp <%= rupiah %>  / hari</span>
     <span class="time mb-3"
-      ><i data-feather="key"></i> 4 Apr 2022 - 6 Apr 2022</span
+      ><i data-feather="key"></i><%= moment(item.start_rent).format('DD MMM YYYY') %> - <%= moment(item.finish_rent).format('DD MMM YYYY') %></span
     >
     <span class="updatedAt mb-4"
-      ><i data-feather="clock"></i> Updated at 4 Apr 2022, 09.00</span
+      ><i data-feather="clock"></i> Updated at <%= moment(item.updated_at).format('DD MMM YYYY, hh.mm') %></span
     >
     <div class="d-flex card-action justify-content-between">
       <a class="btn btn-outline-danger mr-3" data-toggle="modal" href="#modalDelete<%=item.id%>">

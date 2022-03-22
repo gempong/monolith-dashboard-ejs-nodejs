@@ -1,4 +1,5 @@
 const createError = require('http-errors')
+const moment = require('moment')
 const express = require('express')
 const path = require('path')
 const flash = require('connect-flash')
@@ -31,7 +32,6 @@ app.use(session({
   user: null
 }))
 app.use(flash())
-
 app.use(toastr({
   positionClass: 'toast-top-right'
 }))
@@ -43,6 +43,11 @@ app.use(fileUpload())
 
 app.use(function (req, res, next) {
   res.locals.toasts = req.toastr.render()
+  next()
+})
+
+app.use((req, res, next) => {
+  res.locals.moment = moment
   next()
 })
 
