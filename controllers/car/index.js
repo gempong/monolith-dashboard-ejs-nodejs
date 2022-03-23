@@ -1,7 +1,10 @@
+const express = require('express')
 const path = require('path')
 const fs = require('fs')
 const Car = require('../../models/car')
 const moment = require('moment')
+const app = express()
+app.use(express.static(path.join(__dirname, 'public')))
 
 module.exports = {
   // VIEW LIST OF CAR
@@ -37,10 +40,18 @@ module.exports = {
       req.toastr.error('Gambar tidak boleh kosong')
       return res.redirect('/car')
     }
+    if (!req.body.start_rent) {
+      req.toastr.error('Start rent tidak boleh kosong')
+      return res.redirect('/car')
+    }
+    if (!req.body.finish_rent) {
+      req.toastr.error('Finish rent tidak boleh kosong')
+      return res.redirect('/car')
+    }
 
     // UPLOAD FUNCTION
     const images = req.files.image
-    images.mv(path.join(__dirname, '../../public/upload/') + id + images.name)
+    images.mv(`public/upload/${id}_${images.name}`)
 
     // PUSH DATA
     const startRent = moment(req.body.start_rent)
@@ -48,7 +59,7 @@ module.exports = {
     const updateAt = moment().toDate()
     const createdAt = moment().toDate()
 
-    const uploaded = '/upload/' + id + images.name
+    const uploaded = `/upload/${id}_${images.name}`
     Car.push({ id: id, name: req.body.name, price: req.body.price, image: uploaded, start_rent: startRent, finish_rent: finishRent, update_at: updateAt, created_at: createdAt })
     req.toastr.success('Data Berhasil Disimpan')
 
@@ -77,14 +88,23 @@ module.exports = {
       req.toastr.error('Harga tidak boleh kosong')
       return res.redirect('/car')
     }
+    if (!req.body.start_rent) {
+      req.toastr.error('Start rent tidak boleh kosong')
+      return res.redirect('/car')
+    }
+    if (!req.body.finish_rent) {
+      req.toastr.error('Finish rent tidak boleh kosong')
+      return res.redirect('/car')
+    }
+
     // CHECK IF IMAGE CHANGE
     if (req.files) {
       if (Car[foundIndex].image !== '/images/car.png') {
-        fs.unlinkSync(path.join(__dirname, '../../public') + Car[foundIndex].image)
+        fs.unlinkSync(`public/${Car[foundIndex].image}`)
       }
       const images = req.files.image
-      images.mv(path.join(__dirname, '../../public/upload/') + Car[foundIndex].id + images.name)
-      const uploaded = '/upload/' + Car[foundIndex].id + images.name
+      images.mv(`public/upload/${Car[foundIndex].id}_${images.name}`)
+      const uploaded = `/upload/${Car[foundIndex].id}_${images.name}`
       Car[foundIndex].image = uploaded
     }
 
@@ -107,7 +127,7 @@ module.exports = {
     // FIND DATA BY ID AND DELETE IT
     const foundIndex = Car.findIndex(x => x.id === parseInt(req.params.id))
     if (Car[foundIndex].image !== '/images/car.png') {
-      fs.unlinkSync(path.join(__dirname, '../../public') + Car[foundIndex].image)
+      fs.unlinkSync(`public/${Car[foundIndex].image}`)
     }
     Car.splice(foundIndex, 1)
 
