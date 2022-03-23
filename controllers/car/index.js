@@ -1,10 +1,7 @@
-const express = require('express')
 const path = require('path')
 const fs = require('fs')
 const Car = require('../../models/car')
 const moment = require('moment')
-const app = express()
-app.use(express.static(path.join(__dirname, 'public')))
 
 module.exports = {
   // VIEW LIST OF CAR
@@ -99,7 +96,7 @@ module.exports = {
 
     // CHECK IF IMAGE CHANGE
     if (req.files) {
-      if (Car[foundIndex].image !== '/images/car.png') {
+      if (Car[foundIndex].image !== '/upload/car.png') {
         fs.unlinkSync(`public/${Car[foundIndex].image}`)
       }
       const images = req.files.image
@@ -126,7 +123,7 @@ module.exports = {
   destroy: (req, res, next) => {
     // FIND DATA BY ID AND DELETE IT
     const foundIndex = Car.findIndex(x => x.id === parseInt(req.params.id))
-    if (Car[foundIndex].image !== '/images/car.png') {
+    if (Car[foundIndex].image !== '/upload/car.png') {
       fs.unlinkSync(`public/${Car[foundIndex].image}`)
     }
     Car.splice(foundIndex, 1)

@@ -62,4 +62,3 @@ typings/
 .next
 .vscode
 .DS_Store
-public/upload/*
