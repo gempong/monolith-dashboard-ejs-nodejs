@@ -13,7 +13,7 @@ function checkLogin (req, res, next) {
 }
 
 router.get('/login', checkLogin, auth.login)
-router.post('/login/store', checkLogin, auth.login_store)
+router.post('/login/store', checkLogin, auth.auth)
 router.get('/logout', auth.logout)
 
 module.exports = router

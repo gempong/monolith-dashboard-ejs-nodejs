@@ -1,4 +1,3 @@
-const path = require('path')
 const fs = require('fs')
 const Car = require('../../models/car')
 const moment = require('moment')
@@ -14,7 +13,7 @@ module.exports = {
     res.render('pages/car/index', locals)
   },
   // SHOW CREATE FORM
-  create: (req, res) => {
+  createForm: (req, res) => {
     const locals = {
       title: 'Add New Car',
       layout: './layouts/sidebar'
@@ -22,7 +21,7 @@ module.exports = {
     res.render('pages/car/form', locals)
   },
   // CREATE NEW CAR FUNCTION
-  create_store: (req, res, next) => {
+  create: (req, res, next) => {
     const id = Car.length > 0 ? Car[Car.length - 1].id + 1 : 1
     // VALIDATION
     if (!req.body.name) {
@@ -37,11 +36,11 @@ module.exports = {
       req.toastr.error('Gambar tidak boleh kosong')
       return res.redirect('/car')
     }
-    if (!req.body.start_rent) {
+    if (!req.body.startRent) {
       req.toastr.error('Start rent tidak boleh kosong')
       return res.redirect('/car')
     }
-    if (!req.body.finish_rent) {
+    if (!req.body.finishRent) {
       req.toastr.error('Finish rent tidak boleh kosong')
       return res.redirect('/car')
     }
@@ -51,19 +50,19 @@ module.exports = {
     images.mv(`public/upload/${id}_${images.name}`)
 
     // PUSH DATA
-    const startRent = moment(req.body.start_rent)
-    const finishRent = moment(req.body.finish_rent)
+    const startRent = moment(req.body.startRent)
+    const finishRent = moment(req.body.finishRent)
     const updateAt = moment().toDate()
     const createdAt = moment().toDate()
 
     const uploaded = `/upload/${id}_${images.name}`
-    Car.push({ id: id, name: req.body.name, price: req.body.price, image: uploaded, start_rent: startRent, finish_rent: finishRent, update_at: updateAt, created_at: createdAt })
+    Car.push({ id: id, name: req.body.name, price: req.body.price, image: uploaded, startRent: startRent, finishRent: finishRent, updateAt: updateAt, createdAt: createdAt })
     req.toastr.success('Data Berhasil Disimpan')
 
     res.redirect('/car')
   },
   // SHOW UPDATE FORM
-  update: (req, res) => {
+  updateForm: (req, res) => {
     const locals = {
       title: 'Update Car',
       layout: './layouts/sidebar',
@@ -74,7 +73,7 @@ module.exports = {
     res.render('pages/car/form', locals)
   },
   // UPDATE CAR FUNCTION
-  update_store: (req, res, next) => {
+  update: (req, res, next) => {
     const foundIndex = Car.findIndex(x => x.id === parseInt(req.params.id))
     // VALIDATION
     if (!req.body.name) {
@@ -85,11 +84,11 @@ module.exports = {
       req.toastr.error('Harga tidak boleh kosong')
       return res.redirect('/car')
     }
-    if (!req.body.start_rent) {
+    if (!req.body.startRent) {
       req.toastr.error('Start rent tidak boleh kosong')
       return res.redirect('/car')
     }
-    if (!req.body.finish_rent) {
+    if (!req.body.finishRent) {
       req.toastr.error('Finish rent tidak boleh kosong')
       return res.redirect('/car')
     }
@@ -106,15 +105,15 @@ module.exports = {
     }
 
     // UPDATE DATA
-    const startRent = moment(req.body.start_rent)
-    const finishRent = moment(req.body.finish_rent)
+    const startRent = moment(req.body.startRent)
+    const finishRent = moment(req.body.finishRent)
     const updateAt = moment().toDate()
 
     Car[foundIndex].name = req.body.name
     Car[foundIndex].price = req.body.price
-    Car[foundIndex].start_rent = startRent
-    Car[foundIndex].finish_rent = finishRent
-    Car[foundIndex].updated_at = updateAt
+    Car[foundIndex].startRent = startRent
+    Car[foundIndex].finishRent = finishRent
+    Car[foundIndex].updatedAt = updateAt
 
     req.toastr.success('Data Berhasil Diubah')
     res.redirect('/car')

@@ -83,10 +83,10 @@
                   type="date"
                   class="form-control"
                   id="harga"
-                  name="start_rent"
+                  name="startRent"
                   placeholder="Start Rent"
                   <% if (locals.dataUpdate) { %> 
-                    value='<%=moment(dataUpdate.start_rent).format('YYYY-MM-DD')%>'
+                    value='<%=moment(dataUpdate.startRent).format('YYYY-MM-DD')%>'
                   <% } %>
                 />
               </div>
@@ -98,10 +98,10 @@
                   type="date"
                   class="form-control"
                   id="harga"
-                  name="finish_rent"
+                  name="finishRent"
                   placeholder="Finish Rent"
                   <% if (locals.dataUpdate) { %> 
-                    value='<%=moment(dataUpdate.finish_rent).format('YYYY-MM-DD')%>'
+                    value='<%=moment(dataUpdate.finishRent).format('YYYY-MM-DD')%>'
                   <% } %>
                 />
               </div>

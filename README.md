@@ -1,5 +1,5 @@
 # Monolith Dashboard using Express.js and Express EJS Layout
-Binar Academy create static monolith dashboard using express.js and express-ejs-layout
+Challenge by Binar Academy to create static monolith dashboard using express.js and express-ejs-layout
 ## Install
 ```bash
 git clone git://github.com/gempong/monolith-dashboard-express-ejs-layout.git
